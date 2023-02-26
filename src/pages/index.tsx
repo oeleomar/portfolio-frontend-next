@@ -1,13 +1,11 @@
-import type { GetStaticProps, NextPage } from "next";
 import axios from "axios";
-import { PortfolioProps } from "../../types/portfolio";
+import type { GetStaticProps, NextPage } from "next";
 
-const Home: NextPage<PortfolioProps> = (props) => {
-  return (
-    <>
-      <h1>{props.name}</h1>
-    </>
-  );
+import { PortfolioProps } from "../../types/portfolio";
+import { Home } from "../templates/Home";
+
+const Index: NextPage<PortfolioProps> = (props) => {
+  return <Home {...props} />;
 };
 
 export default Home;

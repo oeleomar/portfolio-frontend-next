@@ -6,6 +6,7 @@ export type PortfolioProps = {
   links: LinksProps[] | [];
   majorProjects: ProjectsProps[] | [];
   minorProjects: ProjectsProps[] | [];
+  experiences: ExperiencesProps[] | [];
   cover: StrapiImageProps;
 };
 
@@ -26,6 +27,16 @@ export type ProjectsProps = {
   tools: ToolsProps[] | [];
 };
 
+export type ExperiencesProps = {
+  id: number;
+  role: string;
+  description: string;
+  since: Date;
+  until: Date | null;
+  workHere: boolean;
+  company: string;
+};
+
 type ToolsProps = {
   id: number;
   tool: string;
@@ -36,11 +47,11 @@ export type StrapiImageProps = {
     id: number;
     attributes: {
       url: string;
-      formats: {
-        large: { url: string };
-        small: { url: string };
-        medium: { url: string };
-        thumbnail: { url: string };
+      formats?: {
+        large?: { url: string };
+        small?: { url: string };
+        medium?: { url: string };
+        thumbnail?: { url: string };
       };
     };
   };
