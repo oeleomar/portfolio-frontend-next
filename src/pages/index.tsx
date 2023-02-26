@@ -11,7 +11,6 @@ const Index: NextPage<PortfolioProps> = (props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-  console.log(process.env.BACKEND_URL);
   try {
     const response = await axios(process.env.BACKEND_URL || "");
     const { data } = response;
