@@ -7,20 +7,39 @@ export const theme = {
     info: "rgb(85, 193, 255)",
     deepWhite: "rgb(255, 255, 255)",
     white: "rgb(250, 250, 253)",
-    gray0: "rgb(245, 245, 253)",
-    gray1: "rgb(241, 241, 243)",
-    gray2: "rgb(221, 221, 223)",
-    gray3: "rgb(201, 201, 203)",
-    gray4: "rgb(181, 181, 184)",
-    gray5: "rgb(161, 161, 164)",
-    gray6: "rgb(141, 141, 144)",
-    gray7: "rgb(121, 121, 124)",
-    gray8: "rgb(101, 101, 104)",
-    gray9: "rgb(81, 81, 84)",
-    gray10: "rgb(61, 61, 64)",
-    gray11: "rgb(41, 41, 44)",
-    gray12: "rgb(21, 21, 24)",
-    deepBlack: "rgb(0, 0, 0)",
+
+    slate0: "#f8fafc",
+    slate1: "#f1f5f9",
+    slate2: "#e2e8f0",
+    slate3: "#cbd5e1",
+    slate4: "#94a3b8",
+    slate5: "#64748b",
+    slate6: "#475569",
+    slate7: "#334155",
+    slate8: "#1e293b",
+    slate9: "#0f172a",
+
+    gray9: "#111827",
+
+    indigo4: "#818cf8",
+    indigo6: "#4f46e5",
+    indigo7: "#3730a3",
+
+    violet4: "#a78bfa",
+    violet6: "#9333ea",
+    violet7: "#6b21a8",
+
+    fuchsia4: "#e879f9",
+    fuchsia6: "#c026d3",
+    fuchsia8: "#86198f",
+    fuchsia9: "#701a75",
+
+    emerald4: "#34d399",
+    emerald6: "#059669",
+    emerald8: "#065f46",
+    emerald9: "#064e3b",
+
+    deepBlack: "#000000",
   },
   font: {
     family: {
@@ -45,15 +64,10 @@ export const theme = {
     },
   },
   media: {
-    lteOrEqSmallest: "(max-width: 320px)",
-    lteOrEqSmall: "(max-width: 576px)",
-    lteOrEqMedium: "(max-width: 768px)",
-    lteOrEqLarge: "(max-width: 992px)",
-
-    gteOrEqSmallest: "(min-width: 320px)",
-    gteOrEqSmall: "(min-width: 576px)",
-    gteOrEqMedium: "(min-width: 768px)",
-    gteOrEqLarge: "(min-width: 992px)",
+    small: "(min-width: 640px)",
+    medium: "(min-width: 768px)",
+    large: "(min-width: 1024px)",
+    xlarge: "(min-width: 1280px)",
   },
   spacings: {
     xxtiny: "0.1rem",
@@ -109,4 +123,4 @@ export const theme = {
     layer9: 9,
     aboveAll: 10,
   },
-};
+} as const;
