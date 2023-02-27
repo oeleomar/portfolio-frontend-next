@@ -1,28 +1,37 @@
+import React, { useEffect, useState } from "react";
 import * as Styled from "./styles";
-import Lottie from "lottie-react";
-import { motion } from "framer-motion";
-
+import Lottie, { useLottie } from "lottie-react";
 import computerLoading from "../../lotties/computerLoading.json";
-import React from "react";
 
 export const LoadingAnimation = () => {
-  const LoadingAnimationMotion = motion(
-    // eslint-disable-next-line react/display-name
-    React.forwardRef<HTMLDivElement>((props, ref) => (
-      <Styled.Wrapper ref={ref}>
-        <Lottie
-          animationData={computerLoading}
-          style={{ width: "300px", height: "300px" }}
-        />
-      </Styled.Wrapper>
-    )),
+  const [out, setOut] = useState(false);
+  const { View, pause, play } = useLottie(
+    { animationData: computerLoading, loop: false, autoplay: true },
+    { width: "150px", height: "150px" },
   );
 
+  useEffect(() => {
+    pause();
+    const timeout = setTimeout(() => {
+      setOut(true);
+    }, 2000);
+
+    const initTimeout = setTimeout(() => {
+      play();
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeout);
+      clearTimeout(initTimeout);
+    };
+  }, []);
+
   return (
-    <LoadingAnimationMotion
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
-      initial={{ opacity: 0 }}
-    />
+    <Styled.Wrapper>
+      <Styled.AnimationContainer out={out}>
+        <h1>E</h1>
+        {View}
+      </Styled.AnimationContainer>
+    </Styled.Wrapper>
   );
 };

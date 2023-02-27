@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { PortfolioProps } from "../../../types/portfolio";
-import { DisplayName } from "../../components/DisplayName/DisplayName";
 import { LoadingAnimation } from "../../components/LoadingAnimation/LoadingAnimation";
 import { About } from "../About";
 import { Experiences } from "../Experiences";
@@ -24,7 +23,7 @@ export const Home = ({
 
     const timeout = setTimeout(() => {
       setInitialLoading(false);
-    }, 2500);
+    }, 3000);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -35,8 +34,6 @@ export const Home = ({
 
   return (
     <Styled.Wrapper>
-      <DisplayName name={name} description={description} links={links} />
-
       <About {...about} />
       <MajorProjects {...majorProjects} />
       <MinorProjects {...minorProjects} />

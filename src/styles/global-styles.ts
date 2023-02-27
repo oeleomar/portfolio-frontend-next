@@ -19,18 +19,8 @@ export const GlobalStyles = createGlobalStyle`
       color: ${theme.colors.emerald4};
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: ${theme.font.family.secondary};
-    }
-
     h1 {
       font-size: ${theme.font.sizes.xlarge};
     }
   `}
-  
 `;

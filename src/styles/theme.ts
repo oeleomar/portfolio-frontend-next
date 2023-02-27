@@ -6,7 +6,7 @@ export const theme = {
     success: "rgb(172, 243, 157)",
     info: "rgb(85, 193, 255)",
     deepWhite: "rgb(255, 255, 255)",
-    white: "rgb(250, 250, 253)",
+    white: "#e6f1ff",
 
     slate0: "#f8fafc",
     slate1: "#f1f5f9",
@@ -39,12 +39,13 @@ export const theme = {
     emerald8: "#065f46",
     emerald9: "#064e3b",
 
+    green: "#64ffda",
+
     deepBlack: "#000000",
   },
   font: {
     family: {
-      default: "'Open Sans', sans-serif",
-      secondary: "'Montserrat', sans-serif",
+      default: "'Inter', sans-serif",
     },
     sizes: {
       xxsmall: "1rem",
