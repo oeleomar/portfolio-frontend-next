@@ -25,11 +25,19 @@ export const Subtitle = styled.h2`
     color: ${theme.colors.slate5};
   `}
 `;
-export const DescriptionContainer = styled.div`
-  ${({ theme }) => css``}
-`;
+
+export const DescriptionContainer = styled.div``;
+
 export const Description = styled.p`
   ${({ theme }) => css`
     max-width: ${theme.frameSizes.largeMedium};
   `}
 `;
+
+export const ButtonContainer = styled.div`
+  ${({ theme }) => css`
+    margin-top: ${theme.spacings.medium};
+  `}
+`;
+
+export const Button = styled.button``;

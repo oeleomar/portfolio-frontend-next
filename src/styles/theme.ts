@@ -40,6 +40,7 @@ export const theme = {
     emerald9: "#064e3b",
 
     green: "#64ffda",
+    greenTint: "rgba(100,255,218,0.1)",
 
     deepBlack: "#000000",
   },
