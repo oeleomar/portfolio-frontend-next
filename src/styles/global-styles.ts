@@ -16,11 +16,42 @@ export const GlobalStyles = createGlobalStyle`
       font-size: 1.6rem;
       background: ${theme.colors.slate9};
       font-family: ${theme.font.family.default};
-      color: ${theme.colors.emerald4};
+      color: ${theme.colors.slate3};
+      line-height: 1.3;
     }
 
     h1 {
       font-size: ${theme.font.sizes.xlarge};
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 600;
+      font-size: ${theme.font.sizes.xlarge};
+
+      @media ${theme.media.medium} {
+        font-size: ${theme.font.sizes.huge};
+      }
+
+      @media ${theme.media.large} {
+        font-size: ${theme.font.sizes.xxhuge};
+      }
+
+      @media ${theme.media.xlarge} {
+        font-size: ${theme.font.sizes.hero};
+      }
+    }
+
+    a,
+    span,
+    p,
+    li {
+      font-size: ${theme.font.sizes.small};
+      color: ${theme.colors.slate5};
+      @media ${theme.media.large} {
+        font-size: ${theme.font.sizes.normal};
+      }
     }
   `}
 `;

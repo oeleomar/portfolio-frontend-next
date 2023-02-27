@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { PortfolioProps } from "../../../types/portfolio";
+import { DisplayName } from "../../components/DisplayName";
 import { LoadingAnimation } from "../../components/LoadingAnimation/LoadingAnimation";
 import { About } from "../About";
 import { Experiences } from "../Experiences";
@@ -34,6 +35,7 @@ export const Home = ({
 
   return (
     <Styled.Wrapper>
+      <DisplayName name={name} description={description} />
       <About {...about} />
       <MajorProjects {...majorProjects} />
       <MinorProjects {...minorProjects} />

@@ -46,12 +46,13 @@ export const theme = {
   font: {
     family: {
       default: "'Inter', sans-serif",
+      mono: "'Fira Code', monospace",
     },
     sizes: {
       xxsmall: "1rem",
       xsmall: "1.2rem",
       small: "1.6rem",
-      normal: "1.8rem",
+      normal: "2.0rem",
       medium: "2.4rem",
       large: "3.2rem",
       xlarge: "4.0rem",
@@ -101,6 +102,7 @@ export const theme = {
     xlarge: "80rem",
     xxlarge: "104rem",
     max: "120rem",
+    huge: "160rem",
   },
   transitions: {
     fastest: "all 100ms ease-in-out",
