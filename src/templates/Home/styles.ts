@@ -6,6 +6,10 @@ export const Wrapper = styled.main`
     margin: 0 auto;
     padding: 0 ${theme.spacings.medium};
 
+    @media ${theme.media.small} {
+      padding: 0 ${theme.spacings.xhuge};
+    }
+
     @media ${theme.media.medium} {
       padding: 0 ${theme.spacings.xxhuge};
     }

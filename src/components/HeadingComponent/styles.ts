@@ -38,7 +38,7 @@ export const Heading = styled.h2<HeadingProps>`
       background-color: ${theme.colors.green};
     }
 
-    @media ${theme.media.medium} {
+    @media ${theme.media.small} {
       font-size: ${theme.font.sizes.large};
 
       ::before {

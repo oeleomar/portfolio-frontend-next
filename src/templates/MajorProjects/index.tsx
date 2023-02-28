@@ -11,6 +11,12 @@ export type MajorProjectProps = {
 };
 
 export const MajorProjects = ({ projects }: MajorProjectProps) => {
+  console.log(
+    projects[1].description.length > 100
+      ? projects[1].description.slice(0, 255)
+      : projects[1].description,
+  );
+
   return (
     <Section>
       <HeadingComponent id="2" title="Projetos Principais" />
@@ -19,11 +25,16 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
           index % 2 === 0 ? (
             <Styled.Project key={`Project-ID-${project.id}`}>
               <Styled.ProjectImage aling="right">
-                <Image
-                  src={project.cover.data?.attributes.url || ""}
-                  fill
-                  alt={`Foto do projeto ${project.title}`}
-                />
+                <a href={project.preview || ""} target="_blank">
+                  <Image
+                    src={project.cover.data?.attributes.url || ""}
+                    fill
+                    alt={`Foto do projeto ${project.title}`}
+                    sizes="(max-width: 768px) 100vw,
+                  (max-width: 1200px) 50vw,
+                  33vw"
+                  />
+                </a>
               </Styled.ProjectImage>
               <Styled.ProjectContent aling="right">
                 <p>Destaque</p>
@@ -34,7 +45,11 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
                 </Styled.ProjectTitle>
 
                 <Styled.ProjectDescription>
-                  <p>{project.description}</p>
+                  <p>
+                    {project.description.length > 255
+                      ? `${project.description.slice(0, 255)}...`
+                      : project.description}
+                  </p>
                 </Styled.ProjectDescription>
                 <Styled.ProjectTechList aling="right">
                   {project.tools.map((tool, index) => (
@@ -55,22 +70,17 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
             </Styled.Project>
           ) : (
             <Styled.Project key={`Project-ID-${project.id}`}>
-              <Styled.ProjectContent aling="left">
-                <span>Destaque</span>
-              </Styled.ProjectContent>
-              <Styled.ProjectImage aling="right"></Styled.ProjectImage>
-            </Styled.Project>
-          ),
-        )}
-        {projects.map((project, index) =>
-          index % 2 === 0 ? (
-            <Styled.Project key={`Project-ID-${project.id}`}>
               <Styled.ProjectImage aling="left">
-                <Image
-                  src={project.cover.data?.attributes.url || ""}
-                  fill
-                  alt={`Foto do projeto ${project.title}`}
-                />
+                <a href={project.preview || ""} target="_blank">
+                  <Image
+                    src={project.cover.data?.attributes.url || ""}
+                    fill
+                    alt={`Foto do projeto ${project.title}`}
+                    sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                33vw"
+                  />
+                </a>
               </Styled.ProjectImage>
               <Styled.ProjectContent aling="left">
                 <p>Destaque</p>
@@ -81,7 +91,11 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
                 </Styled.ProjectTitle>
 
                 <Styled.ProjectDescription>
-                  <p>{project.description}</p>
+                  <p>
+                    {project.description.length > 255
+                      ? `${project.description.slice(0, 255)}...`
+                      : project.description}
+                  </p>
                 </Styled.ProjectDescription>
                 <Styled.ProjectTechList aling="left">
                   {project.tools.map((tool, index) => (
@@ -91,21 +105,18 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
                   ))}
                 </Styled.ProjectTechList>
                 <Styled.ProjectLinks aling="left">
-                  <a href={project.github} target="_blank">
-                    <GithubOutline size={30} />
-                  </a>
-                  <a href={project.preview} target="_blank">
-                    <ExternalLinkOutline size={30} />
-                  </a>
+                  {project.github ? (
+                    <a href={project.github} target="_blank">
+                      <GithubOutline size={30} />
+                    </a>
+                  ) : null}
+                  {project.preview ? (
+                    <a href={project.preview} target="_blank">
+                      <ExternalLinkOutline size={30} />
+                    </a>
+                  ) : null}
                 </Styled.ProjectLinks>
               </Styled.ProjectContent>
-            </Styled.Project>
-          ) : (
-            <Styled.Project key={`Project-ID-${project.id}`}>
-              <Styled.ProjectContent aling="left">
-                <span>Destaque</span>
-              </Styled.ProjectContent>
-              <Styled.ProjectImage aling="right"></Styled.ProjectImage>
             </Styled.Project>
           ),
         )}
