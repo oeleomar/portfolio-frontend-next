@@ -5,7 +5,6 @@ import { Section } from "../../components/Section";
 import * as Styled from "./styles";
 
 export const About = ({ title, cover, description }: AboutProps) => {
-  console.log(description);
   return (
     <Section small>
       <HeadingComponent id="1" title={title} />

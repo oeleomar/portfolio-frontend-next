@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -22,7 +22,7 @@ export const Name = styled.h1``;
 
 export const Subtitle = styled.h2`
   ${({ theme }) => css`
-    color: ${theme.colors.slate5};
+    color: ${theme.colors.slate4};
   `}
 `;
 

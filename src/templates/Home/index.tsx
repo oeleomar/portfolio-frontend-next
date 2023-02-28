@@ -19,7 +19,6 @@ export const Home = ({
   cover,
 }: PortfolioProps) => {
   const [initialLoading, setInitialLoading] = useState(true);
-
   useEffect(() => {
     if (!initialLoading) return;
 
@@ -38,7 +37,7 @@ export const Home = ({
     <Styled.Wrapper>
       <DisplayName name={name} description={description} />
       <About cover={cover} {...about} />
-      <MajorProjects {...majorProjects} />
+      <MajorProjects projects={majorProjects} />
       <MinorProjects {...minorProjects} />
 
       <Experiences {...experiences} />

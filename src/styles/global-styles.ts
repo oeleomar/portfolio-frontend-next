@@ -48,7 +48,7 @@ export const GlobalStyles = createGlobalStyle`
     p,
     li {
       font-size: ${theme.font.sizes.small};
-      color: ${theme.colors.slate5};
+      color: ${theme.colors.slate4};
       @media ${theme.media.large} {
         font-size: 1.8rem;
       }

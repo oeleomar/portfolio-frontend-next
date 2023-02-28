@@ -16,7 +16,7 @@ export const theme = {
     slate5: "#64748b",
     slate6: "#475569",
     slate7: "#334155",
-    slate8: "#1e293b",
+    slate8: "#1f2937",
     slate9: "#0f172a",
 
     gray9: "#111827",
