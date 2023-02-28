@@ -4,6 +4,7 @@ import { DisplayName } from "../../components/DisplayName";
 import { LoadingAnimation } from "../../components/LoadingAnimation/LoadingAnimation";
 import { About } from "../About";
 import { Experiences } from "../Experiences";
+import { Footer } from "../Footer";
 import { MajorProjects } from "../MajorProjects";
 import { MinorProjects } from "../MinorProjects";
 import * as Styled from "./styles";
@@ -18,6 +19,7 @@ export const Home = ({
   links,
   cover,
 }: PortfolioProps) => {
+  console.log(links);
   const [initialLoading, setInitialLoading] = useState(true);
   useEffect(() => {
     if (!initialLoading) return;
@@ -34,13 +36,15 @@ export const Home = ({
   }
 
   return (
-    <Styled.Wrapper>
-      <DisplayName name={name} description={description} />
-      <About cover={cover} {...about} />
-      <MajorProjects projects={majorProjects} />
-      <MinorProjects projects={minorProjects} />
-
-      <Experiences {...experiences} />
-    </Styled.Wrapper>
+    <>
+      <Styled.Wrapper>
+        <DisplayName name={name} description={description} />
+        <About cover={cover} {...about} />
+        <MajorProjects projects={majorProjects} />
+        <MinorProjects projects={minorProjects} />
+        <Experiences experiences={experiences} />
+      </Styled.Wrapper>
+      <Footer />
+    </>
   );
 };
