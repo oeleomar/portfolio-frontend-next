@@ -38,7 +38,7 @@ export const Home = ({
       <DisplayName name={name} description={description} />
       <About cover={cover} {...about} />
       <MajorProjects projects={majorProjects} />
-      <MinorProjects {...minorProjects} />
+      <MinorProjects projects={minorProjects} />
 
       <Experiences {...experiences} />
     </Styled.Wrapper>

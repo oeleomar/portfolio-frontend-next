@@ -6,6 +6,5 @@ export type HeadingComponentProps = {
 };
 
 export const HeadingComponent = ({ id, title }: HeadingComponentProps) => {
-  console.log(typeof id);
   return <Styled.Heading number={id}>{title}</Styled.Heading>;
 };

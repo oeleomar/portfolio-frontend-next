@@ -11,12 +11,6 @@ export type MajorProjectProps = {
 };
 
 export const MajorProjects = ({ projects }: MajorProjectProps) => {
-  console.log(
-    projects[1].description.length > 100
-      ? projects[1].description.slice(0, 255)
-      : projects[1].description,
-  );
-
   return (
     <Section>
       <HeadingComponent id="2" title="Projetos Principais" />
@@ -25,7 +19,7 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
           index % 2 === 0 ? (
             <Styled.Project key={`Project-ID-${project.id}`}>
               <Styled.ProjectImage aling="right">
-                <a href={project.preview || ""} target="_blank">
+                <a href={project.preview || "#"} target="_blank">
                   <Image
                     src={project.cover.data?.attributes.url || ""}
                     fill
@@ -39,7 +33,7 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
               <Styled.ProjectContent aling="right">
                 <p>Destaque</p>
                 <Styled.ProjectTitle>
-                  <a href={project.preview} target="_blank">
+                  <a href={project.preview || "#"} target="_blank">
                     {project.title}
                   </a>
                 </Styled.ProjectTitle>
@@ -59,19 +53,23 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
                   ))}
                 </Styled.ProjectTechList>
                 <Styled.ProjectLinks aling="right">
-                  <a href={project.github} target="_blank">
-                    <GithubOutline size={30} />
-                  </a>
-                  <a href={project.preview} target="_blank">
-                    <ExternalLinkOutline size={30} />
-                  </a>
+                  {project.github ? (
+                    <a href={project.github} target="_blank">
+                      <GithubOutline size={30} />
+                    </a>
+                  ) : null}
+                  {project.preview ? (
+                    <a href={project.preview} target="_blank">
+                      <ExternalLinkOutline size={30} />
+                    </a>
+                  ) : null}
                 </Styled.ProjectLinks>
               </Styled.ProjectContent>
             </Styled.Project>
           ) : (
             <Styled.Project key={`Project-ID-${project.id}`}>
               <Styled.ProjectImage aling="left">
-                <a href={project.preview || ""} target="_blank">
+                <a href={project.preview || "#"} target="_blank">
                   <Image
                     src={project.cover.data?.attributes.url || ""}
                     fill
@@ -85,7 +83,7 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
               <Styled.ProjectContent aling="left">
                 <p>Destaque</p>
                 <Styled.ProjectTitle>
-                  <a href={project.preview} target="_blank">
+                  <a href={project.preview || "#"} target="_blank">
                     {project.title}
                   </a>
                 </Styled.ProjectTitle>

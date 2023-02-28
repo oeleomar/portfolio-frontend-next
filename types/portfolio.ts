@@ -43,6 +43,8 @@ export type ExperiencesProps = {
   until: Date | null;
   workHere: boolean;
   company: string;
+  city: string;
+  country: string;
 };
 
 export type StrapiImageProps = {

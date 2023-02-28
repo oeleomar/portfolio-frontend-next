@@ -7,7 +7,7 @@ export const Wrapper = styled.ul`
 `;
 
 type StyledProjectProps = {
-  aling: "left" | "right";
+  aling?: "left" | "right";
 };
 
 export const Project = styled.li`
@@ -180,7 +180,7 @@ export const ProjectDescription = styled.div`
 `;
 
 export const ProjectTechList = styled.ul<StyledProjectProps>`
-  ${({ theme, aling }) => css`
+  ${({ theme, aling = "left" }) => css`
     display: flex;
     flex-wrap: wrap;
     position: relative;

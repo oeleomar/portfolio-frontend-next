@@ -15,7 +15,7 @@ export const theme = {
     slate4: "#a8b2d1",
     slate5: "#64748b",
     slate6: "#475569",
-    slate7: "#112240",
+    slate7: "#000000",
     slate8: "#112240",
     slate9: "#0a192f",
     slateShadow: "rgba(2,12,27,0.7)",
@@ -48,7 +48,7 @@ export const theme = {
   font: {
     family: {
       default: "'Inter', sans-serif",
-      mono: "'Fira Code', monospace",
+      mono: "'Share Tech Mono', 'Fira Code', monospace",
     },
     sizes: {
       xxsmall: "1rem",
