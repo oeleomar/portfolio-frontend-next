@@ -50,7 +50,7 @@ export const GlobalStyles = createGlobalStyle`
       font-size: ${theme.font.sizes.small};
       color: ${theme.colors.slate5};
       @media ${theme.media.large} {
-        font-size: ${theme.font.sizes.normal};
+        font-size: 1.8rem;
       }
     }
 

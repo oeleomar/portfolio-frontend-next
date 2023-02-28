@@ -16,6 +16,7 @@ export const Home = ({
   minorProjects,
   experiences,
   links,
+  cover,
 }: PortfolioProps) => {
   const [initialLoading, setInitialLoading] = useState(true);
 
@@ -36,7 +37,7 @@ export const Home = ({
   return (
     <Styled.Wrapper>
       <DisplayName name={name} description={description} />
-      <About {...about} />
+      <About cover={cover} {...about} />
       <MajorProjects {...majorProjects} />
       <MinorProjects {...minorProjects} />
 

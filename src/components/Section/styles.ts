@@ -1,8 +1,12 @@
 import styled, { css } from "styled-components";
 
-export const Wrapper = styled.section`
-  ${({ theme }) => css`
-    max-width: ${theme.frameSizes.xxlarge};
+type SectionProps = {
+  small: boolean;
+};
+
+export const Wrapper = styled.section<SectionProps>`
+  ${({ theme, small }) => css`
+    max-width: ${!small ? theme.frameSizes.xxlarge : "90rem"};
     margin: 0 auto;
   `}
 `;

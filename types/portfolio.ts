@@ -21,6 +21,7 @@ export type AboutProps = {
   id: number;
   title: string;
   description: AboutDescriptionProps[] | [];
+  cover?: StrapiImageProps;
 };
 
 export type ProjectsProps = {
