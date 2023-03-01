@@ -293,12 +293,28 @@
     "@babel/runtime" "^7.20.7"
     "@styled-icons/styled-icon" "^10.7.0"
 
+"@styled-icons/boxicons-regular@^10.47.0":
+  "integrity" "sha512-z8KczDp4VArXvOn8i2j66Xs4oX9oiiJEhMoHydY3uC9kdtImcxhZ/xHPrgTJLkbK6f5ikwB4CKVnSqQGzzAJNw=="
+  "resolved" "https://registry.npmjs.org/@styled-icons/boxicons-regular/-/boxicons-regular-10.47.0.tgz"
+  "version" "10.47.0"
+  dependencies:
+    "@babel/runtime" "^7.20.7"
+    "@styled-icons/styled-icon" "^10.7.0"
+
 "@styled-icons/evaicons-outline@^10.46.0":
   "integrity" "sha512-+tHb/Ir6G1e+rSJ2YKgm2vzjF80JoXWEmoC48exFrQEKQkJPSWtsqKdROkfANKrY9AFnRKhJQ+9fHhnjS+V/OA=="
   "resolved" "https://registry.npmjs.org/@styled-icons/evaicons-outline/-/evaicons-outline-10.46.0.tgz"
   "version" "10.46.0"
   dependencies:
     "@babel/runtime" "^7.19.0"
+    "@styled-icons/styled-icon" "^10.7.0"
+
+"@styled-icons/material-outlined@^10.47.0":
+  "integrity" "sha512-/QeDSGXlfRoIsgx4g4Hb//xhsucD4mJJsNPk/e1XzckxkNG+YHCIjbAHzDwxwNfSCJYcTDcOp2SZcoS7iyNGlw=="
+  "resolved" "https://registry.npmjs.org/@styled-icons/material-outlined/-/material-outlined-10.47.0.tgz"
+  "version" "10.47.0"
+  dependencies:
+    "@babel/runtime" "^7.20.7"
     "@styled-icons/styled-icon" "^10.7.0"
 
 "@styled-icons/styled-icon@^10.7.0":

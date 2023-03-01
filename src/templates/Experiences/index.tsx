@@ -17,7 +17,7 @@ export type ExperiencesPropsComponent = {
 export const Experiences = ({ experiences }: ExperiencesPropsComponent) => {
   return (
     <Section>
-      <HeadingComponent id="4" title="Experiencias" />
+      <HeadingComponent id="3" title="Experiencias" />
       <Styled.Wrapper>
         <VerticalTimeline lineColor={theme.colors.green}>
           {experiences.map((experience) => (
@@ -33,7 +33,7 @@ export const Experiences = ({ experiences }: ExperiencesPropsComponent) => {
                       {
                         timeZone: "UTC",
                       },
-                    )}}`
+                    )}`
                   : " - Até o momento"
               }`}
               contentStyle={{

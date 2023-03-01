@@ -27,7 +27,6 @@ export const MinorProjects = ({ projects }: MinorProjectsProps) => {
       index < 6 ? project : null,
     );
     setFilteredProject([...project]);
-    console.log(filteredProjects);
   }, []);
 
   const handleLoadMorePosts = () => {

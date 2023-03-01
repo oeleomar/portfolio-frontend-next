@@ -10,9 +10,6 @@ export const TextContainer = styled.div`
 
 export const PictureContainer = styled.div`
   ${({ theme }) => css`
-    display: flex;
-    justify-content: center;
-
     > div {
       position: relative;
     }

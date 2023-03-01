@@ -19,7 +19,6 @@ export const Home = ({
   links,
   cover,
 }: PortfolioProps) => {
-  console.log(links);
   const [initialLoading, setInitialLoading] = useState(true);
   useEffect(() => {
     if (!initialLoading) return;

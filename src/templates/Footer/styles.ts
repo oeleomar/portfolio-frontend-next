@@ -121,3 +121,41 @@ export const FooterEmail = styled.div`
     }
   `}
 `;
+
+export const FooterText = styled.div`
+  ${({ theme }) => css`
+    text-align: center;
+    font-family: ${theme.font.family.mono};
+    color: ${theme.colors.slate4};
+    font-size: ${theme.font.sizes.xsmall};
+    margin: ${theme.spacings.huge};
+
+    > a,
+    span {
+      font-size: inherit;
+      color: inherit;
+      font-family: inherit;
+      transition: ${theme.transitions.fast};
+    }
+
+    > a:hover {
+      color: ${theme.colors.green};
+    }
+
+    a::after {
+      display: none;
+    }
+
+    > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+      gap: 1rem;
+    }
+
+    > div:hover {
+      color: ${theme.colors.green};
+    }
+  `}
+`;
