@@ -19,6 +19,7 @@ export const Project = styled.li`
     -webkit-box-align: center;
     align-items: center;
     margin-bottom: 15rem;
+    opacity: 0;
 
     @media (max-width: 768px) {
       margin: 0 auto;
