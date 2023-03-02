@@ -13,7 +13,7 @@ export const Header = ({ setMenuMobile, open }: HeaderProps) => {
   let progress = useRef(0);
   const [scroll, setScroll] = useState(false);
   const [scrolledToTop, setScrolledToTop] = useState(true);
-  const { ref, inView, entry } = useInView({ triggerOnce: true });
+  const { ref, inView, entry } = useInView({ triggerOnce: false });
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -45,12 +45,15 @@ export const Header = ({ setMenuMobile, open }: HeaderProps) => {
         </div>
 
         <div>
-          <Styled.ButtonClose onClick={() => setMenuMobile(!open)}>
+          <Styled.ButtonClose
+            onClick={() => setMenuMobile(!open)}
+            className={`${inView ? "animation-top" : null} delay`}
+          >
             {open ? <Close size={50} /> : <Menu size={50} />}
           </Styled.ButtonClose>
           <Styled.AsideMobile open={open}>
             <ol>
-              <li>
+              <li className={`${inView ? "animation-top" : null} delay`}>
                 <Link
                   href="#about"
                   onClick={() => setMenuMobile(false)}
@@ -59,7 +62,7 @@ export const Header = ({ setMenuMobile, open }: HeaderProps) => {
                   Sobre
                 </Link>
               </li>
-              <li>
+              <li className={`${inView ? "animation-top" : null} delay2`}>
                 <Link
                   href="#projects"
                   onClick={() => setMenuMobile(false)}
@@ -68,7 +71,7 @@ export const Header = ({ setMenuMobile, open }: HeaderProps) => {
                   Projetos
                 </Link>
               </li>
-              <li>
+              <li className={`${inView ? "animation-top" : null} delay3`}>
                 <Link
                   href="#experience"
                   onClick={() => setMenuMobile(false)}
@@ -77,7 +80,7 @@ export const Header = ({ setMenuMobile, open }: HeaderProps) => {
                   Experiências
                 </Link>
               </li>
-              <li>
+              <li className={`${inView ? "animation-top" : null} delay4`}>
                 <Link
                   href="#contact"
                   onClick={() => setMenuMobile(false)}
@@ -86,7 +89,7 @@ export const Header = ({ setMenuMobile, open }: HeaderProps) => {
                   Contato
                 </Link>
               </li>
-              <button>
+              <button className={`${inView ? "animation-top" : null} delay5`}>
                 <a href="/static/curriculo.pdf">Curriculo</a>
               </button>
             </ol>
