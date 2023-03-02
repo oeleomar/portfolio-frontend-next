@@ -6,7 +6,7 @@ import { Section } from "../../components/Section";
 import * as Styled from "./styles";
 
 export const About = ({ title, cover, description }: AboutProps) => {
-  const { ref, inView, entry } = useInView();
+  const { ref, inView, entry } = useInView({ triggerOnce: true });
 
   return (
     <Section small id="about">
@@ -15,7 +15,10 @@ export const About = ({ title, cover, description }: AboutProps) => {
         title={title}
         className={`${inView ? "animation-bottom" : ""} delay`}
       />
-      <Styled.Container ref={ref}>
+      <Styled.Container
+        ref={ref}
+        className={`${inView ? "animation-bottom" : ""} delay2`}
+      >
         <Styled.TextContainer>
           {description.map((desc) => (
             <p key={`About-Descriptio-${desc.id}`}>{desc.description}</p>

@@ -13,7 +13,7 @@ export const top = keyframes`
 
 export const bottom = keyframes`
   0% {
-    transform: translateY(20%);
+    transform: translateY(20px);
     opacity: 0;
   }
   100% {

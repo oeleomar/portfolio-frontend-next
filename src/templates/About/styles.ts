@@ -71,6 +71,7 @@ export const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     gap: 50px;
+    opacity: 0;
 
     @media ${theme.media.medium} {
       grid-template-columns: 3fr 2fr;
