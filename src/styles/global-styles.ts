@@ -1,4 +1,5 @@
 import { createGlobalStyle, css } from "styled-components";
+import { bottom, fadeIn, top } from "./animations";
 
 export const GlobalStyles = createGlobalStyle`
   ${({ theme }) => css`
@@ -94,6 +95,44 @@ export const GlobalStyles = createGlobalStyle`
 
     button:hover {
       background-color: ${theme.colors.greenTint};
+    }
+
+    .animation-top {
+      opacity: 0;
+      animation: ${top} 500ms ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    .animation-bottom {
+      opacity: 0;
+      animation: ${bottom} 500ms ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    .animation-fade {
+      opacity: 0;
+      animation: ${fadeIn} 500ms ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    .delay {
+      animation-delay: 100ms;
+    }
+
+    .delay2 {
+      animation-delay: 200ms;
+    }
+
+    .delay3 {
+      animation-delay: 300ms;
+    }
+
+    .delay4 {
+      animation-delay: 400ms;
+    }
+
+    .delay5 {
+      animation-delay: 500ms;
     }
   `}
 `;

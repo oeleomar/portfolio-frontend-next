@@ -34,6 +34,11 @@ export const Wrapper = styled.header<Scrool>`
       display: none;
     }
 
+    li,
+    button {
+      opacity: 0;
+    }
+
     @media ${theme.media.medium} {
       transform: ${scroll
         ? `translateY(-${theme.spacings.xxhero})`
@@ -47,7 +52,10 @@ export const Wrapper = styled.header<Scrool>`
 `;
 
 export const Logo = styled.div`
-  ${({ theme }) => css``}
+  ${({ theme }) =>
+    css`
+      opacity: 0;
+    `}
 `;
 
 export const Navbar = styled.nav`
@@ -71,7 +79,7 @@ export const List = styled.ol`
       list-style: none;
       align-items: center;
       justify-content: space-between;
-      font-size: ${theme.font.sizes.small};
+      font-size: 1.3rem;
 
       > button {
         margin-left: 15px;

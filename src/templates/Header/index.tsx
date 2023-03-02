@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import * as Styled from "./styles";
 import { Close, Menu } from "@styled-icons/material-outlined";
 import Link from "next/link";
+import { useInView } from "react-intersection-observer";
 
 export type HeaderProps = {
   setMenuMobile: (a: boolean) => void;
@@ -12,6 +13,7 @@ export const Header = ({ setMenuMobile, open }: HeaderProps) => {
   let progress = useRef(0);
   const [scroll, setScroll] = useState(false);
   const [scrolledToTop, setScrolledToTop] = useState(true);
+  const { ref, inView, entry } = useInView({ triggerOnce: true });
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -34,10 +36,12 @@ export const Header = ({ setMenuMobile, open }: HeaderProps) => {
   };
 
   return (
-    <Styled.Wrapper scroll={scroll} progress={scrolledToTop}>
+    <Styled.Wrapper scroll={scroll} progress={scrolledToTop} ref={ref}>
       <Styled.Navbar>
         <div>
-          <Styled.Logo>LOGO</Styled.Logo>
+          <Styled.Logo className={`${inView ? "animation-fade" : null} delay`}>
+            LOGO
+          </Styled.Logo>
         </div>
 
         <div>
@@ -91,27 +95,33 @@ export const Header = ({ setMenuMobile, open }: HeaderProps) => {
 
         <div>
           <Styled.List>
-            <Styled.Link>
+            <Styled.Link className={`${inView ? "animation-top" : null} delay`}>
               <Link href="#about" scroll={false}>
                 Sobre
               </Link>
             </Styled.Link>
-            <Styled.Link>
+            <Styled.Link
+              className={`${inView ? "animation-top" : null} delay2`}
+            >
               <Link href="#projects" scroll={false}>
                 Projetos
               </Link>
             </Styled.Link>
-            <Styled.Link>
+            <Styled.Link
+              className={`${inView ? "animation-top" : null} delay3`}
+            >
               <Link href="#experience" scroll={false}>
                 Experiências
               </Link>
             </Styled.Link>
-            <Styled.Link>
+            <Styled.Link
+              className={`${inView ? "animation-top" : null} delay4`}
+            >
               <Link href="#contact" scroll={false}>
                 Contato
               </Link>
             </Styled.Link>
-            <button>
+            <button className={`${inView ? "animation-top" : null} delay5`}>
               <a href="/static/curriculo.pdf">Curriculo</a>
             </button>
           </Styled.List>
