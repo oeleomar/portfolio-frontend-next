@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ParticlesBackground } from "../../components/ParticlesBackground";
 import { PortfolioProps } from "../../../types/portfolio";
 import { DisplayName } from "../../components/DisplayName";
 import { LoadingAnimation } from "../../components/LoadingAnimation/LoadingAnimation";
@@ -39,6 +40,8 @@ export const Home = ({
 
   return (
     <>
+      <ParticlesBackground />
+
       <Header setMenuMobile={setMenuMobile} open={menuMobile} />
       <Styled.Wrapper open={menuMobile}>
         <DisplayName name={name} description={description} />
