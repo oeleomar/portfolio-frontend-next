@@ -5,6 +5,7 @@ import { LoadingAnimation } from "../../components/LoadingAnimation/LoadingAnima
 import { About } from "../About";
 import { Experiences } from "../Experiences";
 import { Footer } from "../Footer";
+import { Header } from "../Header";
 import { MajorProjects } from "../MajorProjects";
 import { MinorProjects } from "../MinorProjects";
 import * as Styled from "./styles";
@@ -20,6 +21,8 @@ export const Home = ({
   cover,
 }: PortfolioProps) => {
   const [initialLoading, setInitialLoading] = useState(true);
+  const [menuMobile, setMenuMobile] = useState(false);
+
   useEffect(() => {
     if (!initialLoading) return;
 
@@ -36,7 +39,8 @@ export const Home = ({
 
   return (
     <>
-      <Styled.Wrapper>
+      <Header setMenuMobile={setMenuMobile} open={menuMobile} />
+      <Styled.Wrapper open={menuMobile}>
         <DisplayName name={name} description={description} />
         <About cover={cover} {...about} />
         <MajorProjects projects={majorProjects} />
