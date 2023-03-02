@@ -6,7 +6,7 @@ import * as Styled from "./styles";
 
 export const About = ({ title, cover, description }: AboutProps) => {
   return (
-    <Section small>
+    <Section small id="about">
       <HeadingComponent id="1" title={title} />
       <Styled.Container>
         <Styled.TextContainer>

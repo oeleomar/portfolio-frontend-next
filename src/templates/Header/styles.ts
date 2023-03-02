@@ -20,15 +20,28 @@ export const Wrapper = styled.header<Scrool>`
     height: ${theme.spacings.xxhero};
     background-color: rgba(10, 25, 47, 0.85);
     backdrop-filter: blur(10px);
-    transition: ${theme.transitions.fast};
+    transition: ${theme.transitions.fastest};
     filter: none !important;
     pointer-events: auto !important;
     user-select: auto !important;
 
+    a {
+      font-size: inherit;
+      color: inherit;
+    }
+
+    a::after {
+      display: none;
+    }
+
     @media ${theme.media.medium} {
-      transform: ${
-        !scroll ? `translateY(${theme.spacings.xxhero})` : "translateY(0)"
-      }) ;
+      transform: ${scroll
+        ? `translateY(-${theme.spacings.xxhero})`
+        : "translateY(0)"};
+
+      box-shadow: ${!progress &&
+      !scroll &&
+      `0 10px 30px -10px ${theme.colors.slateShadow};`};
     }
   `}
 `;
@@ -74,6 +87,11 @@ export const Link = styled.li`
     counter-increment: item 1;
     padding: 10px;
     font-size: inherit;
+    transition: ${theme.transitions.fast};
+
+    a:hover {
+      color: ${theme.colors.green};
+    }
 
     &::before {
       font-size: inherit;

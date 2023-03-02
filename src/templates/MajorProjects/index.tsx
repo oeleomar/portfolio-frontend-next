@@ -12,7 +12,7 @@ export type MajorProjectProps = {
 
 export const MajorProjects = ({ projects }: MajorProjectProps) => {
   return (
-    <Section>
+    <Section id="projects">
       <HeadingComponent id="2" title="Projetos Principais" />
       <Styled.Wrapper id="majorProjects">
         {projects.map((project, index) =>

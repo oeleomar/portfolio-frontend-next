@@ -16,7 +16,7 @@ export type ExperiencesPropsComponent = {
 
 export const Experiences = ({ experiences }: ExperiencesPropsComponent) => {
   return (
-    <Section>
+    <Section id="experience">
       <HeadingComponent id="3" title="Experiencias" />
       <Styled.Wrapper>
         <VerticalTimeline lineColor={theme.colors.green}>
