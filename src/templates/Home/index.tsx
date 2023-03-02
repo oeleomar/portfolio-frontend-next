@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { ParticlesBackground } from "../../components/ParticlesBackground";
 import { PortfolioProps } from "../../../types/portfolio";
 import { DisplayName } from "../../components/DisplayName";
 import { LoadingAnimation } from "../../components/LoadingAnimation/LoadingAnimation";
+import { ParticlesBackground } from "../../components/ParticlesBackground";
 import { About } from "../About";
 import { Experiences } from "../Experiences";
 import { Footer } from "../Footer";

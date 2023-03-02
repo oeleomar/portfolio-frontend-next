@@ -1,3 +1,5 @@
+import { theme } from "../styles/theme";
+
 const particlesConfig = {
   background: {
     color: {
@@ -29,10 +31,10 @@ const particlesConfig = {
   },
   particles: {
     color: {
-      value: "#00FCB9",
+      value: theme.colors.green,
     },
     links: {
-      color: "#0BE2E6",
+      color: theme.colors.green,
       distance: 150,
       enable: true,
       opacity: 0.5,

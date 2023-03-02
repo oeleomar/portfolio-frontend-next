@@ -18,8 +18,8 @@ export const Wrapper = styled.header<Scrool>`
     padding: 0px 50px;
     width: 100%;
     height: ${theme.spacings.xxhero};
-    background-color: rgba(10, 25, 47, 0.85);
-    backdrop-filter: blur(10px);
+    background-color: ${progress ? "transparent" : "rgba(10, 25, 47, 0.85)"};
+    backdrop-filter: ${progress ? "none" : "blur(10px)"};
     transition: ${theme.transitions.fastest};
     filter: none !important;
     pointer-events: auto !important;
