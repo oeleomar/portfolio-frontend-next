@@ -56,6 +56,11 @@ export const Project = styled.li`
     justify-content: space-between;
     transition: ${theme.transitions.fast};
     border-radius: 5px;
+    opacity: 0;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
   `}
 `;
 

@@ -38,9 +38,7 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
               {({ inView, ref }: any) => (
                 <Styled.Project
                   ref={ref}
-                  className={`${inView ? "animation-bottom" : null} delay${
-                    index + 1
-                  }`}
+                  className={`${inView ? "animation-bottom" : null} delay3`}
                 >
                   <Styled.ProjectImage aling="right">
                     <a href={project.preview || "#"} target="_blank">
@@ -99,9 +97,7 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
               {({ inView, ref }: any) => (
                 <Styled.Project
                   ref={ref}
-                  className={`${inView ? "animation-bottom" : null} delay${
-                    index + 1
-                  }`}
+                  className={`${inView ? "animation-bottom" : null} delay3`}
                 >
                   <Styled.ProjectImage aling="left">
                     <a href={project.preview || "#"} target="_blank">
