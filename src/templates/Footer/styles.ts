@@ -69,6 +69,7 @@ export const FooterIcons = styled.div`
 export const FooterEmail = styled.div`
   ${({ theme }) => css`
     position: relative;
+    display: none;
 
     > div {
       width: 2px;
