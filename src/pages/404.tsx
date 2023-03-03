@@ -18,7 +18,13 @@ export default function Custom404({ header, footer }: PortfolioProps) {
         <title>Página não encontrada | Eleomar Dorneles</title>
         <meta name="description" content="Página não encontrada" />
       </Head>
-      <Header header={header} open={menuMobile} setMenuMobile={setMenuMobile} />
+      {header && (
+        <Header
+          header={header}
+          open={menuMobile}
+          setMenuMobile={setMenuMobile}
+        />
+      )}
       <Lottie
         animationData={page404}
         autoPlay
@@ -38,7 +44,7 @@ export default function Custom404({ header, footer }: PortfolioProps) {
       >
         <Link href="/">Voltar para a Home</Link>
       </button>
-      <Footer footer={footer} />
+      {footer && <Footer footer={footer} />}
     </>
   );
 }
@@ -55,7 +61,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   } catch (err) {
     return {
       props: {},
-      notFound: true,
     };
   }
 };
