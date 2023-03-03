@@ -5,7 +5,13 @@ import { HeadingComponent } from "../../components/HeadingComponent";
 import { Section } from "../../components/Section";
 import * as Styled from "./styles";
 
-export const About = ({ title, cover, description }: AboutProps) => {
+export const About = ({
+  title,
+  cover,
+  description,
+  attributes,
+  id,
+}: AboutProps) => {
   const { ref, inView, entry } = useInView({ triggerOnce: true });
 
   return (
@@ -25,12 +31,11 @@ export const About = ({ title, cover, description }: AboutProps) => {
           ))}
 
           <Styled.TechnologiesContainer>
-            <Styled.Technologies>Tecnologia 1</Styled.Technologies>
-            <Styled.Technologies>Tecnologia 1</Styled.Technologies>
-            <Styled.Technologies>Tecnologia 1</Styled.Technologies>
-            <Styled.Technologies>Tecnologia 1</Styled.Technologies>
-            <Styled.Technologies>Tecnologia 1</Styled.Technologies>
-            <Styled.Technologies>Tecnologia 1</Styled.Technologies>
+            {attributes.map((attr) => (
+              <Styled.Technologies key={id + attr.id + attr.description}>
+                {attr.description}
+              </Styled.Technologies>
+            ))}
           </Styled.TechnologiesContainer>
         </Styled.TextContainer>
         <Styled.PictureContainer>
