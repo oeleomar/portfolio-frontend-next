@@ -4,6 +4,7 @@ import { GetStaticProps } from "next";
 import { Header } from "../templates/Header";
 import { Footer } from "../templates/Footer";
 import { PortfolioProps } from "../../types/portfolio";
+import Link from "next/link";
 import Lottie from "lottie-react";
 import page404 from "../lotties/page404.json";
 
@@ -30,7 +31,7 @@ export default function Custom404({ header, footer }: PortfolioProps) {
         style={{ display: "block", margin: "2rem auto" }}
         className="animation-bottom delay3"
       >
-        <a href="/">Voltar para a Home</a>
+        <Link href="/">Voltar para a Home</Link>
       </button>
       <Footer footer={footer} />
     </>

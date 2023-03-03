@@ -47,15 +47,17 @@ export const Header = ({
       <Styled.Navbar>
         <div>
           <Styled.Logo className={`${inView ? "animation-fade" : null} delay`}>
-            <Image
-              src={header.logo.data?.attributes.formats?.thumbnail?.url || ""}
-              fill
-              sizes="(max-width: 768px) 100vw,
+            <Link href="/">
+              <Image
+                src={header.logo.data?.attributes.formats?.thumbnail?.url || ""}
+                fill
+                sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
-              priority
-              alt="Logo Eleomar Dorneles"
-            />
+                priority
+                alt="Logo Eleomar Dorneles"
+              />
+            </Link>
           </Styled.Logo>
         </div>
 

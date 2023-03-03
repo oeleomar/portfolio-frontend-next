@@ -12,6 +12,7 @@ import {
 } from "../MajorProjects/styles";
 import { GithubOutline } from "@styled-icons/evaicons-outline";
 import { InView } from "react-intersection-observer";
+import Link from "next/link";
 
 export type MinorProjectsProps = {
   projects: ProjectsProps[] | [];
@@ -50,7 +51,9 @@ export const MinorProjects = ({ projects }: MinorProjectsProps) => {
     <Styled.Wrapper>
       <Section id="">
         <Styled.Heading>Outros projetos</Styled.Heading>
-        <Styled.LinkArchive href="#">veja o arquivo</Styled.LinkArchive>
+        <Styled.LinkArchive>
+          <Link href="/archives">veja o arquivo</Link>
+        </Styled.LinkArchive>
         <Styled.ProjectsContainer>
           {filteredProjects.map((project, index) => (
             <InView key={`project-${project.id}-${project.title}`} triggerOnce>

@@ -59,8 +59,6 @@ export const Home = ({
 
       <Header setMenuMobile={setMenuMobile} open={menuMobile} header={header} />
 
-      <ParticlesBackground />
-
       <Styled.Wrapper open={menuMobile}>
         <DisplayName
           name={title}

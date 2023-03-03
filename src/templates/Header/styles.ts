@@ -57,10 +57,16 @@ export const Wrapper = styled.header<Scrool>`
 export const Logo = styled.div`
   ${({ theme }) => css`
     position: relative;
-    width: 50px;
-    height: 50px;
     z-index: 9;
     opacity: 0;
+
+    a {
+      width: 50px;
+      height: 50px;
+    }
+    a::after {
+      display: none;
+    }
   `}
 `;
 

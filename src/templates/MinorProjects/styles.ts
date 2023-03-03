@@ -27,7 +27,7 @@ export const Heading = styled.h2`
   `}
 `;
 
-export const LinkArchive = styled.a`
+export const LinkArchive = styled.div`
   ${({ theme }) => css`
     font-family: ${theme.font.family.mono};
   `}
