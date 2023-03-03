@@ -7,13 +7,24 @@ import { PortfolioProps } from "../../types/portfolio";
 import Link from "next/link";
 import Lottie from "lottie-react";
 import page404 from "../lotties/page404.json";
+import Head from "next/head";
 
 export default function Custom404({ header, footer }: PortfolioProps) {
   const [menuMobile, setMenuMobile] = useState(false);
 
   return (
     <>
-      <Header header={header} open={menuMobile} setMenuMobile={setMenuMobile} />
+      <Head>
+        <title>Página não encontrada | Eleomar Dorneles</title>
+        <meta name="description" content="Página não encontrada" />
+      </Head>
+      {header && (
+        <Header
+          header={header}
+          open={menuMobile}
+          setMenuMobile={setMenuMobile}
+        />
+      )}
       <Lottie
         animationData={page404}
         autoPlay
@@ -33,7 +44,7 @@ export default function Custom404({ header, footer }: PortfolioProps) {
       >
         <Link href="/">Voltar para a Home</Link>
       </button>
-      <Footer footer={footer} />
+      {footer && <Footer footer={footer} />}
     </>
   );
 }
@@ -50,7 +61,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   } catch (err) {
     return {
       props: {},
-      notFound: true,
     };
   }
 };
