@@ -14,6 +14,7 @@ export const Heading = styled.h2<HeadingProps>`
     width: 100%;
     font-size: ${theme.font.sizes.medium};
     white-space: nowrap;
+    opacity: 0;
 
     ::before {
       content: "0${number}.";

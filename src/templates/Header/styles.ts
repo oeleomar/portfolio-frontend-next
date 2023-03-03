@@ -19,8 +19,8 @@ export const Wrapper = styled.header<Scrool>`
     z-index: 11;
     width: 100%;
     height: ${theme.spacings.xxhero};
-    background-color: rgba(10, 25, 47, 0.85);
-    backdrop-filter: blur(10px);
+    background-color: ${progress ? "transparent" : "rgba(10, 25, 47, 0.85)"};
+    backdrop-filter: ${progress ? "none" : "blur(10px)"};
     transition: ${theme.transitions.fastest};
     filter: none !important;
     pointer-events: auto !important;
@@ -33,6 +33,11 @@ export const Wrapper = styled.header<Scrool>`
 
     a::after {
       display: none;
+    }
+
+    li,
+    button {
+      opacity: 0;
     }
 
     @media ${theme.media.medium} {
@@ -55,6 +60,7 @@ export const Logo = styled.div`
     width: 50px;
     height: 50px;
     z-index: 9;
+    opacity: 0;
   `}
 `;
 
@@ -79,7 +85,7 @@ export const List = styled.ol`
       list-style: none;
       align-items: center;
       justify-content: space-between;
-      font-size: ${theme.font.sizes.small};
+      font-size: 1.3rem;
 
       > button {
         margin-left: 15px;

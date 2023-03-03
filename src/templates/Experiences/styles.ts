@@ -2,6 +2,8 @@ import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
+    overflow-x: hidden;
+
     .vertical-timeline-element-title {
       font-size: ${theme.font.sizes.normal};
       transition: ${theme.transitions.fast};

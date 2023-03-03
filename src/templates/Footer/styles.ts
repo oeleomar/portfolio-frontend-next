@@ -11,11 +11,12 @@ export const FooterIcons = styled.div`
     > div {
       width: 2px;
       height: 10rem;
-      position: fixed;
       background-color: ${theme.colors.slate4};
       display: none;
 
       @media ${theme.media.medium} {
+        position: fixed;
+
         display: block;
         left: 30px;
         bottom: 0;
@@ -28,8 +29,8 @@ export const FooterIcons = styled.div`
     }
 
     > ul {
-      display: none;
-      position: fixed;
+      display: flex;
+      justify-content: center;
       list-style: none;
 
       > li {
@@ -53,6 +54,7 @@ export const FooterIcons = styled.div`
 
       @media ${theme.media.medium} {
         display: block;
+        position: fixed;
         left: 10px;
         bottom: 115px;
       }
@@ -128,7 +130,7 @@ export const FooterText = styled.div`
     font-family: ${theme.font.family.mono};
     color: ${theme.colors.slate4};
     font-size: ${theme.font.sizes.xsmall};
-    margin: ${theme.spacings.huge};
+    margin: ${theme.spacings.mediumSmall};
 
     > a,
     span {
@@ -156,6 +158,10 @@ export const FooterText = styled.div`
 
     > div:hover {
       color: ${theme.colors.green};
+    }
+
+    @media ${theme.media.medium} {
+      margin: ${theme.spacings.huge};
     }
   `}
 `;

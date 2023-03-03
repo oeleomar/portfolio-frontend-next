@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { PortfolioProps } from "../../../types/portfolio";
 import { DisplayName } from "../../components/DisplayName";
 import { LoadingAnimation } from "../../components/LoadingAnimation/LoadingAnimation";
+import { ParticlesBackground } from "../../components/ParticlesBackground";
 import { About } from "../About";
 import { Experiences } from "../Experiences";
 import { Footer } from "../Footer";
@@ -56,6 +57,8 @@ export const Home = ({
       </Head>
 
       <Header setMenuMobile={setMenuMobile} open={menuMobile} header={header} />
+
+      <ParticlesBackground />
 
       <Styled.Wrapper open={menuMobile}>
         <DisplayName

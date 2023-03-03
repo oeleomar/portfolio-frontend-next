@@ -1,3 +1,4 @@
+import { useInView } from "react-intersection-observer";
 import { Section } from "../Section";
 import * as Styled from "./styles";
 
@@ -12,18 +13,36 @@ export const DisplayName = ({
   description,
   subtitle,
 }: DisplayNameProps) => {
+  const { ref, inView, entry } = useInView({ triggerOnce: true });
+
   return (
     <Section id="">
-      <Styled.Wrapper>
-        <Styled.Span>Olá, meu nome é</Styled.Span>
+      <Styled.Wrapper ref={ref}>
+        <Styled.Span className={`${inView ? "animation-bottom" : null} delay`}>
+          Olá, meu nome é
+        </Styled.Span>
         <div>
-          <Styled.Name>{name}.</Styled.Name>
-          <Styled.Subtitle>{subtitle}.</Styled.Subtitle>
+          <Styled.Name
+            className={`${inView ? "animation-bottom" : null} delay2`}
+          >
+            {name}.
+          </Styled.Name>
+          <Styled.Subtitle
+            className={`${inView ? "animation-bottom" : null} delay3`}
+          >
+            {subtitle}.
+          </Styled.Subtitle>
         </div>
         <Styled.DescriptionContainer>
-          <Styled.Description>{description}</Styled.Description>
+          <Styled.Description
+            className={`${inView ? "animation-bottom" : null} delay4`}
+          >
+            {description}
+          </Styled.Description>
         </Styled.DescriptionContainer>
-        <Styled.ButtonContainer>
+        <Styled.ButtonContainer
+          className={`${inView ? "animation-bottom" : null} delay5`}
+        >
           <a href="/static/curriculo.pdf" download>
             <Styled.Button className="button">Baixar CV</Styled.Button>
           </a>
