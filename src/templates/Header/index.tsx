@@ -48,8 +48,12 @@ export const Header = ({
         <div>
           <Styled.Logo className={`${inView ? "animation-fade" : null} delay`}>
             <Image
-              src={header.logo.data?.attributes.url || ""}
+              src={header.logo.data?.attributes.formats?.thumbnail?.url || ""}
               fill
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+              priority
               alt="Logo Eleomar Dorneles"
             />
           </Styled.Logo>

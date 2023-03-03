@@ -21,8 +21,9 @@ export const Home = ({
   minorProjects,
   experiences,
   header,
-  cover,
+  footer,
   meta,
+  cover,
 }: PortfolioProps) => {
   const [initialLoading, setInitialLoading] = useState(true);
   const [menuMobile, setMenuMobile] = useState(false);
@@ -72,7 +73,7 @@ export const Home = ({
         <Experiences experiences={experiences} />
       </Styled.Wrapper>
 
-      <Footer />
+      <Footer footer={footer} />
     </>
   );
 };
