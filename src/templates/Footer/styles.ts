@@ -122,6 +122,10 @@ export const FooterEmail = styled.div`
         right: -34px;
       }
     }
+
+    @media ${theme.media.medium} {
+      display: block;
+    }
   `}
 `;
 

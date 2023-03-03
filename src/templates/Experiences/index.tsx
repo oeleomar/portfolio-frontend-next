@@ -30,7 +30,7 @@ export const Experiences = ({ experiences }: ExperiencesPropsComponent) => {
                 timeZone: "UTC",
               })}${
                 experience.until
-                  ? ` - ${new Date(experience.since).toLocaleDateString(
+                  ? ` - ${new Date(experience.until).toLocaleDateString(
                       "pt-BR",
                       {
                         timeZone: "UTC",

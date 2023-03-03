@@ -7,12 +7,17 @@ import { PortfolioProps } from "../../types/portfolio";
 import Link from "next/link";
 import Lottie from "lottie-react";
 import page404 from "../lotties/page404.json";
+import Head from "next/head";
 
 export default function Custom404({ header, footer }: PortfolioProps) {
   const [menuMobile, setMenuMobile] = useState(false);
 
   return (
     <>
+      <Head>
+        <title>Página não encontrada | Eleomar Dorneles</title>
+        <meta name="description" content="Página não encontrada" />
+      </Head>
       <Header header={header} open={menuMobile} setMenuMobile={setMenuMobile} />
       <Lottie
         animationData={page404}
