@@ -2,13 +2,10 @@ import React from "react";
 import axios from "axios";
 import { GetStaticProps } from "next";
 import { PortfolioProps } from "../../types/portfolio";
+import { Archives as ArchiveTemplate } from "../templates/Archives";
 
-export default function Archives({ header, footer }: PortfolioProps) {
-  return (
-    <>
-      <h1>Olá arquivos</h1>
-    </>
-  );
+export default function Archives(props: PortfolioProps) {
+  return <ArchiveTemplate {...props} />;
 }
 
 export const getStaticProps: GetStaticProps = async (ctx) => {

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { HeaderProps } from "../../../types/portfolio";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
+import { useRouter } from "next/router";
 
 export type HeaderTemplatesProps = {
   header: HeaderProps;
@@ -21,6 +22,7 @@ export const Header = ({
   const [scroll, setScroll] = useState(false);
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const { ref, inView, entry } = useInView({ triggerOnce: false });
+  const router = useRouter();
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -78,7 +80,11 @@ export const Header = ({
                   }`}
                 >
                   <Link
-                    href={link.url}
+                    href={
+                      router.pathname === "/archives"
+                        ? "/" + link.url
+                        : link.url
+                    }
                     onClick={() => setMenuMobile(false)}
                     scroll={false}
                   >
@@ -102,7 +108,12 @@ export const Header = ({
                   index + 1
                 }`}
               >
-                <Link href={link.url} scroll={false}>
+                <Link
+                  href={
+                    router.pathname === "/archives" ? "/" + link.url : link.url
+                  }
+                  scroll={false}
+                >
                   {link.pathname}
                 </Link>
               </Styled.Link>
