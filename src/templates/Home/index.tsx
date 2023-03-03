@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import { PortfolioProps } from "../../../types/portfolio";
 import { DisplayName } from "../../components/DisplayName";
@@ -11,14 +12,16 @@ import { MinorProjects } from "../MinorProjects";
 import * as Styled from "./styles";
 
 export const Home = ({
-  name,
+  title,
+  subtitle,
   description,
   about,
   majorProjects,
   minorProjects,
   experiences,
-  links,
+  header,
   cover,
+  meta,
 }: PortfolioProps) => {
   const [initialLoading, setInitialLoading] = useState(true);
   const [menuMobile, setMenuMobile] = useState(false);
@@ -34,19 +37,38 @@ export const Home = ({
   }, []);
 
   if (initialLoading) {
-    return <LoadingAnimation />;
+    return (
+      <>
+        <Head>
+          <title>{meta.title}</title>
+          <meta name="description" content={meta.description} />
+        </Head>
+        <LoadingAnimation />
+      </>
+    );
   }
 
   return (
     <>
-      <Header setMenuMobile={setMenuMobile} open={menuMobile} />
+      <Head>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+      </Head>
+
+      <Header setMenuMobile={setMenuMobile} open={menuMobile} header={header} />
+
       <Styled.Wrapper open={menuMobile}>
-        <DisplayName name={name} description={description} />
+        <DisplayName
+          name={title}
+          subtitle={subtitle}
+          description={description}
+        />
         <About cover={cover} {...about} />
         <MajorProjects projects={majorProjects} />
         <MinorProjects projects={minorProjects} />
         <Experiences experiences={experiences} />
       </Styled.Wrapper>
+
       <Footer />
     </>
   );

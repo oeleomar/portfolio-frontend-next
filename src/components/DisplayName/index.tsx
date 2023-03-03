@@ -3,26 +3,25 @@ import * as Styled from "./styles";
 
 export type DisplayNameProps = {
   name: string;
+  subtitle: string;
   description: string;
 };
 
-export const DisplayName = ({ name, description }: DisplayNameProps) => {
+export const DisplayName = ({
+  name,
+  description,
+  subtitle,
+}: DisplayNameProps) => {
   return (
-    <Section>
+    <Section id="">
       <Styled.Wrapper>
         <Styled.Span>Olá, meu nome é</Styled.Span>
         <div>
           <Styled.Name>{name}.</Styled.Name>
-          <Styled.Subtitle>{description}.</Styled.Subtitle>
+          <Styled.Subtitle>{subtitle}.</Styled.Subtitle>
         </div>
         <Styled.DescriptionContainer>
-          <Styled.Description>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industrys standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen.
-            <a href="#">Um texto Qualquer</a>
-          </Styled.Description>
+          <Styled.Description>{description}</Styled.Description>
         </Styled.DescriptionContainer>
         <Styled.ButtonContainer>
           <a href="/static/curriculo.pdf" download>

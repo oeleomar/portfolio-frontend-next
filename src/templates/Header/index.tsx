@@ -2,13 +2,20 @@ import { useEffect, useRef, useState } from "react";
 import * as Styled from "./styles";
 import { Close, Menu } from "@styled-icons/material-outlined";
 import Link from "next/link";
+import { HeaderProps } from "../../../types/portfolio";
+import Image from "next/image";
 
-export type HeaderProps = {
+export type HeaderTemplatesProps = {
+  header: HeaderProps;
   setMenuMobile: (a: boolean) => void;
   open: boolean;
 };
 
-export const Header = ({ setMenuMobile, open }: HeaderProps) => {
+export const Header = ({
+  setMenuMobile,
+  open,
+  header,
+}: HeaderTemplatesProps) => {
   let progress = useRef(0);
   const [scroll, setScroll] = useState(false);
   const [scrolledToTop, setScrolledToTop] = useState(true);
@@ -37,7 +44,13 @@ export const Header = ({ setMenuMobile, open }: HeaderProps) => {
     <Styled.Wrapper scroll={scroll} progress={scrolledToTop}>
       <Styled.Navbar>
         <div>
-          <Styled.Logo>LOGO</Styled.Logo>
+          <Styled.Logo>
+            <Image
+              src={header.logo.data?.attributes.url || ""}
+              fill
+              alt="Logo Eleomar Dorneles"
+            />
+          </Styled.Logo>
         </div>
 
         <div>
@@ -46,42 +59,17 @@ export const Header = ({ setMenuMobile, open }: HeaderProps) => {
           </Styled.ButtonClose>
           <Styled.AsideMobile open={open}>
             <ol>
-              <li>
-                <Link
-                  href="#about"
-                  onClick={() => setMenuMobile(false)}
-                  scroll={false}
-                >
-                  Sobre
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#projects"
-                  onClick={() => setMenuMobile(false)}
-                  scroll={false}
-                >
-                  Projetos
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#experience"
-                  onClick={() => setMenuMobile(false)}
-                  scroll={false}
-                >
-                  Experiências
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#contact"
-                  onClick={() => setMenuMobile(false)}
-                  scroll={false}
-                >
-                  Contato
-                </Link>
-              </li>
+              {header.links.map((link) => (
+                <li key={link.id + link.pathname + link.url}>
+                  <Link
+                    href={link.url}
+                    onClick={() => setMenuMobile(false)}
+                    scroll={false}
+                  >
+                    {link.pathname}
+                  </Link>
+                </li>
+              ))}
               <button>
                 <a href="/static/curriculo.pdf">Curriculo</a>
               </button>
@@ -91,26 +79,13 @@ export const Header = ({ setMenuMobile, open }: HeaderProps) => {
 
         <div>
           <Styled.List>
-            <Styled.Link>
-              <Link href="#about" scroll={false}>
-                Sobre
-              </Link>
-            </Styled.Link>
-            <Styled.Link>
-              <Link href="#projects" scroll={false}>
-                Projetos
-              </Link>
-            </Styled.Link>
-            <Styled.Link>
-              <Link href="#experience" scroll={false}>
-                Experiências
-              </Link>
-            </Styled.Link>
-            <Styled.Link>
-              <Link href="#contact" scroll={false}>
-                Contato
-              </Link>
-            </Styled.Link>
+            {header.links.map((link) => (
+              <Styled.Link key={link.id + link.pathname + link.url}>
+                <Link href={link.url} scroll={false}>
+                  {link.pathname}
+                </Link>
+              </Styled.Link>
+            ))}
             <button>
               <a href="/static/curriculo.pdf">Curriculo</a>
             </button>

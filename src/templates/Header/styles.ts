@@ -13,9 +13,10 @@ export const Wrapper = styled.header<Scrool>`
     -webkit-box-align: center;
     align-items: center;
     position: fixed;
+    padding: 0px 20px;
+
     top: 0px;
     z-index: 11;
-    padding: 0px 50px;
     width: 100%;
     height: ${theme.spacings.xxhero};
     background-color: rgba(10, 25, 47, 0.85);
@@ -35,6 +36,8 @@ export const Wrapper = styled.header<Scrool>`
     }
 
     @media ${theme.media.medium} {
+      padding: 0px 50px;
+
       transform: ${scroll
         ? `translateY(-${theme.spacings.xxhero})`
         : "translateY(0)"};
@@ -47,7 +50,12 @@ export const Wrapper = styled.header<Scrool>`
 `;
 
 export const Logo = styled.div`
-  ${({ theme }) => css``}
+  ${({ theme }) => css`
+    position: relative;
+    width: 50px;
+    height: 50px;
+    z-index: 9;
+  `}
 `;
 
 export const Navbar = styled.nav`

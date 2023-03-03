@@ -1,5 +1,6 @@
 import axios from "axios";
 import type { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 
 import { PortfolioProps } from "../../types/portfolio";
 import { Home } from "../templates/Home";
