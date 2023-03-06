@@ -39,7 +39,7 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html>
+      <Html lang="pt-BR">
         <Head>
           <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
           <link
