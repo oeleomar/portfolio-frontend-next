@@ -14,6 +14,9 @@ export const Wrapper = styled.header<Scrool>`
     align-items: center;
     position: fixed;
     padding: 0px 20px;
+    transform: ${scroll
+      ? `translateY(-${theme.spacings.xxhero})`
+      : "translateY(0)"};
 
     top: 0px;
     z-index: 11;
@@ -42,10 +45,6 @@ export const Wrapper = styled.header<Scrool>`
 
     @media ${theme.media.medium} {
       padding: 0px 50px;
-
-      transform: ${scroll
-        ? `translateY(-${theme.spacings.xxhero})`
-        : "translateY(0)"};
 
       box-shadow: ${!progress &&
       !scroll &&

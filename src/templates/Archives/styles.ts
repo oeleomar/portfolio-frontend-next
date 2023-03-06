@@ -81,7 +81,14 @@ export const Table = styled.table`
       cursor: default;
     }
 
+    tr td {
+      padding: 10px;
+      white-space: pre-wrap;
+    }
+
+    tr,
     td,
+    tr,
     th {
       padding: 10px;
       padding-left: 10px;
@@ -102,7 +109,7 @@ export const Table = styled.table`
       display: none;
 
       @media ${theme.media.medium} {
-        display: inline-block;
+        display: revert;
       }
     }
 
