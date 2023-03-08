@@ -64,6 +64,7 @@ export const Header = ({
           <Styled.ButtonClose
             onClick={() => setMenuMobile(!open)}
             className={`${inView ? "animation-top" : null} delay`}
+            aria-label="Botão de Open e Close menu"
           >
             {open ? <Close size={50} /> : <Menu size={50} />}
           </Styled.ButtonClose>
