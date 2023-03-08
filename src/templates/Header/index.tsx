@@ -53,10 +53,7 @@ export const Header = ({
               <Image
                 src={header.logo.data?.attributes.formats?.thumbnail?.url || ""}
                 fill
-                sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-                priority
+                sizes="20vw"
                 alt="Logo Eleomar Dorneles"
               />
             </Link>
@@ -93,7 +90,9 @@ export const Header = ({
                 </li>
               ))}
               <button className={`${inView ? "animation-top" : null} delay5`}>
-                <a href="/static/curriculo.pdf">Curriculo</a>
+                <Link href="/static/curriculo.pdf" download target="_blank">
+                  Curriculo
+                </Link>
               </button>
             </ol>
           </Styled.AsideMobile>
@@ -119,7 +118,9 @@ export const Header = ({
               </Styled.Link>
             ))}
             <button className={`${inView ? "animation-top" : null} delay5`}>
-              <a href="/static/curriculo.pdf">Curriculo</a>
+              <Link href="/static/curriculo.pdf" download target="_blank">
+                Curriculo
+              </Link>
             </button>
           </Styled.List>
         </div>

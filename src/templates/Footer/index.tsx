@@ -7,6 +7,7 @@ import { Star } from "@styled-icons/bootstrap/Star";
 import { GitBranch } from "@styled-icons/boxicons-regular/GitBranch";
 import { useInView } from "react-intersection-observer";
 import { FooterProps } from "../../../types/portfolio";
+import Link from "next/link";
 
 export type FooterTemplateProps = {
   footer: FooterProps;
@@ -20,35 +21,47 @@ export const Footer = ({ footer }: FooterTemplateProps) => {
         <ul>
           {footer.github && (
             <li className="animation-top delay3">
-              <a target="_blank" href={footer.linkGithub}>
+              <Link
+                target="_blank"
+                href={footer.linkGithub}
+                aria-label="Link para o github de Eleomar"
+              >
                 <GithubOutline size={22} />
-              </a>
+              </Link>
             </li>
           )}
           {footer.linkedin && (
             <li className="animation-top delay2">
-              <a target="_blank" href={footer.linkLinkedin}>
+              <Link
+                target="_blank"
+                href={footer.linkLinkedin}
+                aria-label="Link para o LinkedIn de Eleomar"
+              >
                 <LinkedinOutline size={22} />
-              </a>
+              </Link>
             </li>
           )}
           {footer.instagram && (
             <li className="animation-top delay1">
-              <a target="_blank" href={footer.linkInstagram}>
+              <Link
+                target="_blank"
+                href={footer.linkInstagram}
+                aria-label="Link para o Instagram de Eleomar"
+              >
                 <Instagram size={22} />
-              </a>
+              </Link>
             </li>
           )}
         </ul>
       </Styled.FooterIcons>
       <Styled.FooterText className="animation-fade">
-        <a href={footer.linkDesign} target="_blank">
+        <Link href={footer.linkDesign} target="_blank">
           Designed By Brittany Chiang
-        </a>
+        </Link>
         <span> & </span>
-        <a href={footer.linkEleomar} target="_blank">
+        <Link href={footer.linkEleomar} target="_blank">
           Created in Next.js by Eleomar Dorneles
-        </a>
+        </Link>
         <div>
           <Star size={12} />
           <span>5.931</span>
@@ -59,7 +72,9 @@ export const Footer = ({ footer }: FooterTemplateProps) => {
       <Styled.FooterEmail>
         <div className="animation-fade"></div>
         <p className="animation-fade">
-          <a href={footer.linkEmail}>{footer.email}</a>
+          <Link href={footer.linkEmail} aria-label="Enviar e-mail">
+            {footer.email}
+          </Link>
         </p>
       </Styled.FooterEmail>
     </Styled.Wrapper>

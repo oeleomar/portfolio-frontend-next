@@ -7,6 +7,7 @@ import { GithubOutline } from "@styled-icons/evaicons-outline/GithubOutline";
 import { ExternalLinkOutline } from "@styled-icons/evaicons-outline/ExternalLinkOutline";
 
 import * as Styled from "./styles";
+import Link from "next/link";
 
 export const Archives = ({
   footer,
@@ -88,14 +89,22 @@ export const Archives = ({
                     <td className="links">
                       <div>
                         {project.github && (
-                          <a href={project.github}>
+                          <Link
+                            href={project.github}
+                            aria-label="Link para o Github de Eleomar Dorneles"
+                            target="_blank"
+                          >
                             <GithubOutline size={20} />
-                          </a>
+                          </Link>
                         )}
                         {project.preview && (
-                          <a href={project.preview}>
+                          <Link
+                            href={project.preview}
+                            aria-label="Link para o Instagram de Eleomar Dorneles"
+                            target="_blank"
+                          >
                             <ExternalLinkOutline size={20} />
-                          </a>
+                          </Link>
                         )}
                       </div>
                     </td>

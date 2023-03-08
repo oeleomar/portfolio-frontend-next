@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import { Section } from "../Section";
 import * as Styled from "./styles";
@@ -43,9 +44,9 @@ export const DisplayName = ({
         <Styled.ButtonContainer
           className={`${inView ? "animation-bottom" : null} delay5`}
         >
-          <a href="/static/curriculo.pdf" download>
+          <Link href="/static/curriculo.pdf" download target="_blank">
             <Styled.Button className="button">Baixar CV</Styled.Button>
-          </a>
+          </Link>
         </Styled.ButtonContainer>
       </Styled.Wrapper>
     </Section>

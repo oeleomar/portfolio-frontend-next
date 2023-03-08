@@ -69,25 +69,33 @@ export const MinorProjects = ({ projects }: MinorProjectsProps) => {
                       <FolderOutline size={40} />
                       <div>
                         {project.github ? (
-                          <a href={project.github} target="_blank">
+                          <Link
+                            href={project.github}
+                            target="_blank"
+                            aria-label="Encaminhar para github do projeto"
+                          >
                             <GithubOutline size={26} />
-                          </a>
+                          </Link>
                         ) : null}
                         {project.preview ? (
-                          <a href={project.preview || ""} target="_blank">
+                          <Link
+                            href={project.preview || ""}
+                            target="_blank"
+                            aria-label="Encaminhar para preview do projeto"
+                          >
                             <ExternalLinkOutline size={26} />
-                          </a>
+                          </Link>
                         ) : null}
                       </div>
                     </div>
                     <ProjectTitle>
-                      <a
+                      <Link
                         href={project.preview || project.github || "#"}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         {project.title}
-                      </a>
+                      </Link>
                     </ProjectTitle>
                     <ProjectDescription>
                       <p>

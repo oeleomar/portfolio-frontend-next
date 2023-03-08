@@ -6,6 +6,7 @@ import { GithubOutline } from "@styled-icons/evaicons-outline/GithubOutline";
 import { ExternalLinkOutline } from "@styled-icons/evaicons-outline/ExternalLinkOutline";
 import Image from "next/image";
 import { InView, PlainChildrenProps } from "react-intersection-observer";
+import Link from "next/link";
 
 export type MajorProjectProps = {
   projects: ProjectsProps[] | [];
@@ -41,7 +42,7 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
                   className={`${inView ? "animation-bottom" : null} delay3`}
                 >
                   <Styled.ProjectImage aling="right">
-                    <a href={project.preview || "#"} target="_blank">
+                    <Link href={project.preview || "#"} target="_blank">
                       <Image
                         src={project.cover.data?.attributes.url || ""}
                         fill
@@ -50,14 +51,14 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
                   (max-width: 1200px) 50vw,
                   33vw"
                       />
-                    </a>
+                    </Link>
                   </Styled.ProjectImage>
                   <Styled.ProjectContent aling="right">
                     <p>Destaque</p>
                     <Styled.ProjectTitle>
-                      <a href={project.preview || "#"} target="_blank">
+                      <Link href={project.preview || "#"} target="_blank">
                         {project.title}
-                      </a>
+                      </Link>
                     </Styled.ProjectTitle>
 
                     <Styled.ProjectDescription>
@@ -78,14 +79,22 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
                     </Styled.ProjectTechList>
                     <Styled.ProjectLinks aling="right">
                       {project.github ? (
-                        <a href={project.github} target="_blank">
+                        <Link
+                          href={project.github}
+                          target="_blank"
+                          aria-label="Encaminhar para github do projeto"
+                        >
                           <GithubOutline size={30} />
-                        </a>
+                        </Link>
                       ) : null}
                       {project.preview ? (
-                        <a href={project.preview} target="_blank">
+                        <Link
+                          href={project.preview}
+                          target="_blank"
+                          aria-label="Encaminhar para preview do projeto"
+                        >
                           <ExternalLinkOutline size={30} />
-                        </a>
+                        </Link>
                       ) : null}
                     </Styled.ProjectLinks>
                   </Styled.ProjectContent>
@@ -100,7 +109,7 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
                   className={`${inView ? "animation-bottom" : null} delay3`}
                 >
                   <Styled.ProjectImage aling="left">
-                    <a href={project.preview || "#"} target="_blank">
+                    <Link href={project.preview || "#"} target="_blank">
                       <Image
                         src={project.cover.data?.attributes.url || ""}
                         fill
@@ -109,14 +118,14 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
                   (max-width: 1200px) 50vw,
                   33vw"
                       />
-                    </a>
+                    </Link>
                   </Styled.ProjectImage>
                   <Styled.ProjectContent aling="left">
                     <p>Destaque</p>
                     <Styled.ProjectTitle>
-                      <a href={project.preview || "#"} target="_blank">
+                      <Link href={project.preview || "#"} target="_blank">
                         {project.title}
-                      </a>
+                      </Link>
                     </Styled.ProjectTitle>
 
                     <Styled.ProjectDescription>
@@ -137,14 +146,22 @@ export const MajorProjects = ({ projects }: MajorProjectProps) => {
                     </Styled.ProjectTechList>
                     <Styled.ProjectLinks aling="left">
                       {project.github ? (
-                        <a href={project.github} target="_blank">
+                        <Link
+                          href={project.github}
+                          target="_blank"
+                          aria-label="Encaminhar para github do projeto"
+                        >
                           <GithubOutline size={30} />
-                        </a>
+                        </Link>
                       ) : null}
                       {project.preview ? (
-                        <a href={project.preview} target="_blank">
+                        <Link
+                          href={project.preview}
+                          target="_blank"
+                          aria-label="Encaminhar para preview do projeto"
+                        >
                           <ExternalLinkOutline size={30} />
-                        </a>
+                        </Link>
                       ) : null}
                     </Styled.ProjectLinks>
                   </Styled.ProjectContent>
