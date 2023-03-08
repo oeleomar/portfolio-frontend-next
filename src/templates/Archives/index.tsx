@@ -9,6 +9,7 @@ import { ExternalLinkOutline } from "@styled-icons/evaicons-outline/ExternalLink
 import * as Styled from "./styles";
 import Link from "next/link";
 import { ParticlesBackground } from "../../components/ParticlesBackground";
+import { useRouter } from "next/router";
 
 export const Archives = ({
   footer,
@@ -19,6 +20,7 @@ export const Archives = ({
 }: PortfolioProps) => {
   const [menuMobile, setMenuMobile] = useState(false);
   const [projects, setProjects] = useState<ProjectsProps[] | []>([]);
+  const router = useRouter();
 
   useEffect(() => {
     const notFilteredProjects = [...majorProjects, ...minorProjects];
@@ -33,10 +35,33 @@ export const Archives = ({
   return (
     <>
       <Head>
-        <title>Arquivos | Eleomar Dorneles</title>
+        <title>{meta.title}</title>
+
+        <meta name="title" content={meta.title} />
         <meta
           name="description"
           content="Seção contendo todos os projetos públicos realizados pelo desenvolvedor Eleomar Dorneles"
+        />
+        <meta
+          name="keywords"
+          content="Programação, eleomar dorneles, React, Next, WEB, Mobile, Back-end, Front-end, Desenvolvimento"
+        />
+        <meta name="robots" content="" />
+        <meta name="revisit-after" content="1 day" />
+        <meta name="language" content="Portuguese" />
+        <meta name="generator" content="N/A" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={router.basePath || "https://eleomardorneles.com.br"}
+        />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
+        <meta
+          property="og:image"
+          content={meta.cover.data?.attributes.url || ""}
         />
       </Head>
       <ParticlesBackground />

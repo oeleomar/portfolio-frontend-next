@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { PortfolioProps } from "../../../types/portfolio";
 import { DisplayName } from "../../components/DisplayName";
@@ -27,6 +28,7 @@ export const Home = ({
 }: PortfolioProps) => {
   const [initialLoading, setInitialLoading] = useState(true);
   const [menuMobile, setMenuMobile] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (!initialLoading) return;
@@ -44,6 +46,15 @@ export const Home = ({
         <Head>
           <title>{meta.title}</title>
           <meta name="description" content={meta.description} />
+          <meta
+            name="keywords"
+            content="Programação, eleomar dorneles, React, Next, WEB, Mobile, Back-end, Front-end, Desenvolvimento"
+          />
+          <meta name="robots" content="" />
+          <meta name="revisit-after" content="1 day" />
+          <meta name="language" content="Portuguese" />
+          <meta name="generator" content="N/A" />
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         </Head>
         <LoadingAnimation />
       </>
@@ -56,7 +67,28 @@ export const Home = ({
 
       <Head>
         <title>{meta.title}</title>
+        <meta name="title" content={meta.title} />
         <meta name="description" content={meta.description} />
+        <meta
+          name="keywords"
+          content="Programação, eleomar dorneles, React, Next, WEB, Mobile, Back-end, Front-end, Desenvolvimento"
+        />
+        <meta name="robots" content="" />
+        <meta name="revisit-after" content="1 day" />
+        <meta name="language" content="Portuguese" />
+        <meta name="generator" content="N/A" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={router.basePath || "https://eleomardorneles.com.br"}
+        />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
+        <meta
+          property="og:image"
+          content={meta.cover.data?.attributes.url || ""}
+        />
       </Head>
 
       <Header setMenuMobile={setMenuMobile} open={menuMobile} header={header} />
