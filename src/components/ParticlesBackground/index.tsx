@@ -13,7 +13,7 @@ export const ParticlesBackground = () => {
 
   return (
     <Particles
-      className="animation-fade delay5"
+      className="particles"
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}

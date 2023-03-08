@@ -39,7 +39,7 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html>
+      <Html lang="pt-BR">
         <Head>
           <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
           <link
@@ -128,6 +128,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
             rel="stylesheet"
           />
+          <link rel="preconnect" href="https://res.cloudinary.com" />
         </Head>
 
         <body>

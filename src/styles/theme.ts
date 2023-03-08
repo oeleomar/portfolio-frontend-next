@@ -13,7 +13,7 @@ export const theme = {
     slate2: "#e2e8f0",
     slate3: "#ccd6f6",
     slate4: "#a8b2d1",
-    slate5: "#64748b",
+    slate5: "#8892b0",
     slate6: "#475569",
     slate7: "#000000",
     slate8: "#112240",

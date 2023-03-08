@@ -5,6 +5,7 @@ import Link from "next/link";
 import { HeaderProps } from "../../../types/portfolio";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
+import { useRouter } from "next/router";
 
 export type HeaderTemplatesProps = {
   header: HeaderProps;
@@ -21,6 +22,7 @@ export const Header = ({
   const [scroll, setScroll] = useState(false);
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const { ref, inView, entry } = useInView({ triggerOnce: false });
+  const router = useRouter();
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -51,10 +53,7 @@ export const Header = ({
               <Image
                 src={header.logo.data?.attributes.formats?.thumbnail?.url || ""}
                 fill
-                sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-                priority
+                sizes="20vw"
                 alt="Logo Eleomar Dorneles"
               />
             </Link>
@@ -65,6 +64,7 @@ export const Header = ({
           <Styled.ButtonClose
             onClick={() => setMenuMobile(!open)}
             className={`${inView ? "animation-top" : null} delay`}
+            aria-label="Botão de Open e Close menu"
           >
             {open ? <Close size={50} /> : <Menu size={50} />}
           </Styled.ButtonClose>
@@ -78,7 +78,11 @@ export const Header = ({
                   }`}
                 >
                   <Link
-                    href={link.url}
+                    href={
+                      router.pathname === "/archives"
+                        ? "/" + link.url
+                        : link.url
+                    }
                     onClick={() => setMenuMobile(false)}
                     scroll={false}
                   >
@@ -87,7 +91,9 @@ export const Header = ({
                 </li>
               ))}
               <button className={`${inView ? "animation-top" : null} delay5`}>
-                <a href="/static/curriculo.pdf">Curriculo</a>
+                <Link href="/static/curriculo.pdf" download target="_blank">
+                  Curriculo
+                </Link>
               </button>
             </ol>
           </Styled.AsideMobile>
@@ -102,13 +108,20 @@ export const Header = ({
                   index + 1
                 }`}
               >
-                <Link href={link.url} scroll={false}>
+                <Link
+                  href={
+                    router.pathname === "/archives" ? "/" + link.url : link.url
+                  }
+                  scroll={false}
+                >
                   {link.pathname}
                 </Link>
               </Styled.Link>
             ))}
             <button className={`${inView ? "animation-top" : null} delay5`}>
-              <a href="/static/curriculo.pdf">Curriculo</a>
+              <Link href="/static/curriculo.pdf" download target="_blank">
+                Curriculo
+              </Link>
             </button>
           </Styled.List>
         </div>

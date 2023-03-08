@@ -45,6 +45,7 @@ export const About = ({
               height={300}
               src={cover?.data?.attributes.url || ""}
               alt="Foto do Desenvolvedor Eleomar Dorneles"
+              priority
             />
           </div>
         </Styled.PictureContainer>
