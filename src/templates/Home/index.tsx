@@ -52,6 +52,8 @@ export const Home = ({
 
   return (
     <>
+      <ParticlesBackground />
+
       <Head>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />

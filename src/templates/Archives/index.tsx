@@ -8,6 +8,7 @@ import { ExternalLinkOutline } from "@styled-icons/evaicons-outline/ExternalLink
 
 import * as Styled from "./styles";
 import Link from "next/link";
+import { ParticlesBackground } from "../../components/ParticlesBackground";
 
 export const Archives = ({
   footer,
@@ -38,6 +39,7 @@ export const Archives = ({
           content="Seção contendo todos os projetos públicos realizados pelo desenvolvedor Eleomar Dorneles"
         />
       </Head>
+      <ParticlesBackground />
 
       <Header setMenuMobile={setMenuMobile} open={menuMobile} header={header} />
 

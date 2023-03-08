@@ -134,5 +134,11 @@ export const GlobalStyles = createGlobalStyle`
     .delay5 {
       animation-delay: 500ms;
     }
+
+    #tsparticles {
+      opacity: 0;
+      animation: ${fadeIn} 1s ease-in-out;
+      animation-fill-mode: forwards;
+    }
   `}
 `;
