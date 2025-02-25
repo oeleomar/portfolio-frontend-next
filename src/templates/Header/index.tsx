@@ -51,7 +51,7 @@ export const Header = ({
           <Styled.Logo className={`${inView ? "animation-fade" : null} delay`}>
             <Link href="/">
               <Image
-                src={header.logo.data?.attributes.formats?.thumbnail?.url || ""}
+                src={header.logo.data?.attributes.url || ""}
                 fill
                 sizes="20vw"
                 alt="Logo Eleomar Dorneles"
